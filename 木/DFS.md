@@ -3,7 +3,7 @@ $V, E$ を木とし、親を返す関数を $p$ , 子の集合を返す関数を
 
 # 子の判定
 
-<img src="https://latex.codecogs.com/svg.image?\bg{white}v\in&space;C(u)\iff&space;in(u)<in(v)<out(u)">
+<img src="https://latex.codecogs.com/svg.image?\bg{white}v\in&space;C(u)\iff&space;in(u)<in(v)<out(v)<out(u)">
 が成り立ちます。
 
 ## 問題例
