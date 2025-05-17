@@ -5,6 +5,33 @@ $V, E$ を木とし、親を返す関数を $p$ , 子の集合を返す関数を
 
 <img src="https://latex.codecogs.com/svg.image?\bg{white}v\in&space;C(u)\iff&space;in(u)<in(v)<out(v)<out(u)">
 が成り立ちます。
+```Rust
+let mut in_time = vec![0; n];
+let mut out_time = vec![0; n];
+dfs(
+	根,
+	初期時間,
+	隣接リスト,
+	&mut in_time,
+	&mut out_time,
+);
+
+fn dfs(
+    i: usize,
+    t: &mut usize,
+    e: &Vec<Vec<usize>>,
+    in_time: &mut [usize],
+    out_time: &mut [usize],
+) {
+    in_time[i] = *t;
+    *t += 1;
+    for j in &e[i] {
+        dfs(*j, t, e, in_time, out_time);
+    }
+    out_time[i] = *t;
+    *t += 1;
+}
+```
 
 ## 問題例
 - https://atcoder.jp/contests/abc202/tasks/abc202_e
