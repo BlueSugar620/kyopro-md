@@ -5,6 +5,7 @@ $V, E$ を木とし、親を返す関数を $p$ , 子の集合を返す関数を
 
 <img src="https://latex.codecogs.com/svg.image?\bg{white}v\in&space;C(u)\iff&space;in(u)<in(v)<out(v)<out(u)">
 が成り立ちます。
+
 ```Rust
 let mut in_time = vec![0; n];
 let mut out_time = vec![0; n];
