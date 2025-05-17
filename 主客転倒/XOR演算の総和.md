@@ -1,15 +1,12 @@
 以下の値を求めます。
-$$\sum_{i = 0}^{N} \sum_{j = 0}^M f(i) \oplus g(j)$$
+
+<img src="https://latex.codecogs.com/svg.image?\bg{white}\sum_{i=0}^{N}\sum_{j=0}^M&space;f(i)\oplus&space;g(j)">
 
 このとき、次の式変形をします。ただし、 $f, g \lt 2^X$ とします。また、 $b(a, i)$ を $a$ の $i$ ビット目を取り出す関数とします。
-$$
-\begin{align}
-& \sum_{i = 0}^{N} \sum_{j = 0}^M f(i) \oplus g(j) \\
-&= \sum_i \sum_j \sum_{k = 0}^X b\big(f(i) \oplus g(j), k\big) \times 2^k \\
-&= \sum_k \Big( \sum_i \sum_j b \big( f(i) \oplus g(j) , k \big) \Big) \times 2^k \\
-&= \sum_k \Big(\sum_i 1_{b(f(i), k) = 1} \times \sum_j 1_{b(g(j), k) = 0} + \sum_{i} 1_{b(f(i), k) = 0)} \times \sum_j 1_{b(g(j), k) = 1} \Big) \times 2^k
-\end{align}
-$$
+
+<img src="https://latex.codecogs.com/svg.image?\bg{white}\begin{align}&\sum_{i=0}^{N}\sum_{j=0}^M&space;f(i)\oplus&space;g(j)\\&=\sum_i\sum_j\sum_{k=0}^X&space;b\big(f(i)\oplus&space;g(j),k\big)\times&space;2^k\\&=\sum_k\Big(\sum_i\sum_j&space;b\big(f(i)\oplus&space;g(j),k\big)\Big)\times&space;2^k\\&=\sum_k\Big(\sum_i&space;1_{b(f(i),k)=1}\times\sum_j&space;1_{b(g(j),k)=0}&plus;\sum_{i}1_{b(f(i),k)=0)}\times\sum_j&space;1_{b(g(j),k)=1}\Big)\times&space;2^k\end{align}
+">
+
 これは、 $i, j$ の総和部分を前計算することで、 $O(X(N + M))$ で求めることができます。
 $f = g$ のときは、 $0 \le i \lt j \lt N$ のように総和を取る範囲が変わっても $i = j$ が必ず $0$ になることにより $\div 2$ で求めることができます。
 ```Rust
