@@ -39,6 +39,6 @@ fn xor_2d_sum(f: &[u64], g: &[u64]) -> u64 {
 }
 ```
 
-## 問題例
+# 問題例
 - https://atcoder.jp/contests/abc201/tasks/abc201_e
 	- 総和の形に持っていくまでが難しいです。
