@@ -32,8 +32,10 @@ fn dfs(
 
 <img src="https://latex.codecogs.com/svg.image?\bg{white}v\in&space;C(u)\iff&space;in(u)<in(v)<out(v)<out(u)">
 が成り立ちます。
+
 # 部分木クエリ
 Euler Tour Tree を使い区間クエリに帰着させることで、更新と取得を高速に行います。
+
 # 問題例
 - https://atcoder.jp/contests/abc202/tasks/abc202_e
 	- $in$ を深さごとに分けて、二分探索で個数を求める問題。
